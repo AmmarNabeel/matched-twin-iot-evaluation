@@ -1,0 +1,519 @@
+{
+ "label": "stress_m3",
+ "kind": "M3",
+ "n_families": 20,
+ "n_pairs": 800,
+ "n_sessions": 1600,
+ "retention": {
+  "primary": 0.25125,
+  "secondary_7feature": 0.315,
+  "by_malicious_type": {
+   "M3": {
+    "pairs": 800,
+    "retained": 201
+   }
+  },
+  "per_family_min": 0.125,
+  "unmatched_pairs": 599
+ },
+ "calipers": {
+  "primary": 0.5141590785674552,
+  "secondary": 0.5242230734000211
+ },
+ "detectors": {
+  "D1_rf_isotonic": {
+   "PMP_primary": {
+    "estimate": 0.13930348258706468,
+    "ci95_two_sided": [
+     0.107981220657277,
+     0.17512726203791332
+    ],
+    "lower_one_sided_97.5": 0.107981220657277,
+    "upper_one_sided_97.5": 0.17512726203791332,
+    "boot_sd": 0.017197610766939115,
+    "n_boot": 10000
+   },
+   "PMP_all_pairs": {
+    "estimate": 0.17,
+    "ci95_two_sided": [
+     0.151875,
+     0.189375
+    ],
+    "lower_one_sided_97.5": 0.151875,
+    "upper_one_sided_97.5": 0.189375,
+    "boot_sd": 0.009611252761493076,
+    "n_boot": 10000
+   },
+   "AUC_pooled": {
+    "estimate": 0.17378046875,
+    "ci95_two_sided": [
+     0.15529724609375,
+     0.1938735546875
+    ],
+    "lower_one_sided_97.5": 0.15529724609375,
+    "upper_one_sided_97.5": 0.1938735546875,
+    "boot_sd": 0.009794117071758304,
+    "n_boot": 10000
+   },
+   "Delta_match": {
+    "estimate": 0.03447698616293532,
+    "ci95_two_sided": [
+     0.002955400715841917,
+     0.0639991134011349
+    ],
+    "lower_one_sided_97.5": 0.002955400715841917,
+    "upper_one_sided_97.5": 0.0639991134011349,
+    "boot_sd": 0.01580563452095229,
+    "n_boot": 10000
+   },
+   "PMP_secondary_7feature_novelty": {
+    "estimate": 0.11706349206349206,
+    "ci95_two_sided": [
+     0.08333333333333333,
+     0.15
+    ],
+    "lower_one_sided_97.5": 0.08333333333333333,
+    "upper_one_sided_97.5": 0.15,
+    "boot_sd": 0.017074689643072297,
+    "n_boot": 10000
+   },
+   "by_malicious_type": {
+    "M3": {
+     "estimate": 0.13930348258706468,
+     "ci95_two_sided": [
+      0.107981220657277,
+      0.17512726203791332
+     ],
+     "lower_one_sided_97.5": 0.107981220657277,
+     "upper_one_sided_97.5": 0.17512726203791332,
+     "boot_sd": 0.017197610766939115,
+     "n_boot": 10000
+    }
+   },
+   "by_structural_signature": {
+    "signature_present": {
+     "estimate": 0.1513157894736842,
+     "ci95_two_sided": [
+      0.10714285714285714,
+      0.2
+     ],
+     "lower_one_sided_97.5": 0.10714285714285714,
+     "upper_one_sided_97.5": 0.2,
+     "boot_sd": 0.023626067918316528,
+     "n_boot": 10000,
+     "retained_pairs": 76
+    },
+    "signature_absent": {
+     "estimate": 0.132,
+     "ci95_two_sided": [
+      0.08509736747205193,
+      0.18503937007874016
+     ],
+     "lower_one_sided_97.5": 0.08509736747205193,
+     "upper_one_sided_97.5": 0.18503937007874016,
+     "boot_sd": 0.025624660138413413,
+     "n_boot": 10000,
+     "retained_pairs": 125
+    }
+   }
+  },
+  "D2_novelty_only": {
+   "PMP_primary": {
+    "estimate": 0.681592039800995,
+    "ci95_two_sided": [
+     0.6210526315789474,
+     0.7409326424870466
+    ],
+    "lower_one_sided_97.5": 0.6210526315789474,
+    "upper_one_sided_97.5": 0.7409326424870466,
+    "boot_sd": 0.03023985817160561,
+    "n_boot": 10000
+   },
+   "PMP_all_pairs": {
+    "estimate": 0.84625,
+    "ci95_two_sided": [
+     0.83125,
+     0.8625
+    ],
+    "lower_one_sided_97.5": 0.83125,
+    "upper_one_sided_97.5": 0.8625,
+    "boot_sd": 0.00800130539514038,
+    "n_boot": 10000
+   },
+   "AUC_pooled": {
+    "estimate": 0.83864375,
+    "ci95_two_sided": [
+     0.819872734375,
+     0.856981640625
+    ],
+    "lower_one_sided_97.5": 0.819872734375,
+    "upper_one_sided_97.5": 0.856981640625,
+    "boot_sd": 0.00950789196086385,
+    "n_boot": 10000
+   },
+   "Delta_match": {
+    "estimate": 0.157051710199005,
+    "ci95_two_sided": [
+     0.09386846750174017,
+     0.21905684483257362
+    ],
+    "lower_one_sided_97.5": 0.09386846750174017,
+    "upper_one_sided_97.5": 0.21905684483257362,
+    "boot_sd": 0.031894587227105815,
+    "n_boot": 10000
+   },
+   "PMP_secondary_7feature_novelty": {
+    "estimate": 0.7420634920634921,
+    "ci95_two_sided": [
+     0.6979570125922709,
+     0.7831325301204819
+    ],
+    "lower_one_sided_97.5": 0.6979570125922709,
+    "upper_one_sided_97.5": 0.7831325301204819,
+    "boot_sd": 0.02193008958879675,
+    "n_boot": 10000
+   },
+   "by_malicious_type": {
+    "M3": {
+     "estimate": 0.681592039800995,
+     "ci95_two_sided": [
+      0.6210526315789474,
+      0.7409326424870466
+     ],
+     "lower_one_sided_97.5": 0.6210526315789474,
+     "upper_one_sided_97.5": 0.7409326424870466,
+     "boot_sd": 0.03023985817160561,
+     "n_boot": 10000
+    }
+   },
+   "by_structural_signature": {
+    "signature_present": {
+     "estimate": 0.6842105263157895,
+     "ci95_two_sided": [
+      0.5764705882352941,
+      0.7972972972972973
+     ],
+     "lower_one_sided_97.5": 0.5764705882352941,
+     "upper_one_sided_97.5": 0.7972972972972973,
+     "boot_sd": 0.05603230927071464,
+     "n_boot": 10000,
+     "retained_pairs": 76
+    },
+    "signature_absent": {
+     "estimate": 0.68,
+     "ci95_two_sided": [
+      0.603448275862069,
+      0.75
+     ],
+     "lower_one_sided_97.5": 0.603448275862069,
+     "upper_one_sided_97.5": 0.75,
+     "boot_sd": 0.036719099339803926,
+     "n_boot": 10000,
+     "retained_pairs": 125
+    }
+   }
+  },
+  "D3_isolation_forest": {
+   "PMP_primary": {
+    "estimate": 0.21890547263681592,
+    "ci95_two_sided": [
+     0.16517646563342317,
+     0.2751359907258783
+    ],
+    "lower_one_sided_97.5": 0.16517646563342317,
+    "upper_one_sided_97.5": 0.2751359907258783,
+    "boot_sd": 0.02790956588296107,
+    "n_boot": 10000
+   },
+   "PMP_all_pairs": {
+    "estimate": 0.31625,
+    "ci95_two_sided": [
+     0.2775,
+     0.3525
+    ],
+    "lower_one_sided_97.5": 0.2775,
+    "upper_one_sided_97.5": 0.3525,
+    "boot_sd": 0.019094710988550565,
+    "n_boot": 10000
+   },
+   "AUC_pooled": {
+    "estimate": 0.341296875,
+    "ci95_two_sided": [
+     0.3123163671875,
+     0.36977207031250003
+    ],
+    "lower_one_sided_97.5": 0.3123163671875,
+    "upper_one_sided_97.5": 0.36977207031250003,
+    "boot_sd": 0.01457231599050359,
+    "n_boot": 10000
+   },
+   "Delta_match": {
+    "estimate": 0.12239140236318408,
+    "ci95_two_sided": [
+     0.07348941375801486,
+     0.1746023187822165
+    ],
+    "lower_one_sided_97.5": 0.07348941375801486,
+    "upper_one_sided_97.5": 0.1746023187822165,
+    "boot_sd": 0.02574840851631376,
+    "n_boot": 10000
+   },
+   "PMP_secondary_7feature_novelty": {
+    "estimate": 0.17063492063492064,
+    "ci95_two_sided": [
+     0.12121212121212122,
+     0.22134387351778656
+    ],
+    "lower_one_sided_97.5": 0.12121212121212122,
+    "upper_one_sided_97.5": 0.22134387351778656,
+    "boot_sd": 0.02545935407197206,
+    "n_boot": 10000
+   },
+   "by_malicious_type": {
+    "M3": {
+     "estimate": 0.21890547263681592,
+     "ci95_two_sided": [
+      0.16517646563342317,
+      0.2751359907258783
+     ],
+     "lower_one_sided_97.5": 0.16517646563342317,
+     "upper_one_sided_97.5": 0.2751359907258783,
+     "boot_sd": 0.02790956588296107,
+     "n_boot": 10000
+    }
+   },
+   "by_structural_signature": {
+    "signature_present": {
+     "estimate": 0.40789473684210525,
+     "ci95_two_sided": [
+      0.3114754098360656,
+      0.506854138529809
+     ],
+     "lower_one_sided_97.5": 0.3114754098360656,
+     "upper_one_sided_97.5": 0.506854138529809,
+     "boot_sd": 0.050318329738668253,
+     "n_boot": 10000,
+     "retained_pairs": 76
+    },
+    "signature_absent": {
+     "estimate": 0.104,
+     "ci95_two_sided": [
+      0.05223880597014925,
+      0.1640625
+     ],
+     "lower_one_sided_97.5": 0.05223880597014925,
+     "upper_one_sided_97.5": 0.1640625,
+     "boot_sd": 0.02846725034650039,
+     "n_boot": 10000,
+     "retained_pairs": 125
+    }
+   }
+  },
+  "D4_logistic_regression": {
+   "PMP_primary": {
+    "estimate": 0.44776119402985076,
+    "ci95_two_sided": [
+     0.3627450980392157,
+     0.538860103626943
+    ],
+    "lower_one_sided_97.5": 0.3627450980392157,
+    "upper_one_sided_97.5": 0.538860103626943,
+    "boot_sd": 0.04511872106488184,
+    "n_boot": 10000
+   },
+   "PMP_all_pairs": {
+    "estimate": 0.56875,
+    "ci95_two_sided": [
+     0.525,
+     0.61
+    ],
+    "lower_one_sided_97.5": 0.525,
+    "upper_one_sided_97.5": 0.61,
+    "boot_sd": 0.021714737978362115,
+    "n_boot": 10000
+   },
+   "AUC_pooled": {
+    "estimate": 0.5618875,
+    "ci95_two_sided": [
+     0.526123203125,
+     0.594193125
+    ],
+    "lower_one_sided_97.5": 0.526123203125,
+    "upper_one_sided_97.5": 0.594193125,
+    "boot_sd": 0.01740745312626049,
+    "n_boot": 10000
+   },
+   "Delta_match": {
+    "estimate": 0.11412630597014922,
+    "ci95_two_sided": [
+     0.02968817503222351,
+     0.19974195955047863
+    ],
+    "lower_one_sided_97.5": 0.02968817503222351,
+    "upper_one_sided_97.5": 0.19974195955047863,
+    "boot_sd": 0.04298108690904849,
+    "n_boot": 10000
+   },
+   "PMP_secondary_7feature_novelty": {
+    "estimate": 0.39285714285714285,
+    "ci95_two_sided": [
+     0.3157840811044003,
+     0.4689922480620155
+    ],
+    "lower_one_sided_97.5": 0.3157840811044003,
+    "upper_one_sided_97.5": 0.4689922480620155,
+    "boot_sd": 0.039213349167413675,
+    "n_boot": 10000
+   },
+   "by_malicious_type": {
+    "M3": {
+     "estimate": 0.44776119402985076,
+     "ci95_two_sided": [
+      0.3627450980392157,
+      0.538860103626943
+     ],
+     "lower_one_sided_97.5": 0.3627450980392157,
+     "upper_one_sided_97.5": 0.538860103626943,
+     "boot_sd": 0.04511872106488184,
+     "n_boot": 10000
+    }
+   },
+   "by_structural_signature": {
+    "signature_present": {
+     "estimate": 0.6842105263157895,
+     "ci95_two_sided": [
+      0.5584415584415584,
+      0.8
+     ],
+     "lower_one_sided_97.5": 0.5584415584415584,
+     "upper_one_sided_97.5": 0.8,
+     "boot_sd": 0.06223314014877616,
+     "n_boot": 10000,
+     "retained_pairs": 76
+    },
+    "signature_absent": {
+     "estimate": 0.304,
+     "ci95_two_sided": [
+      0.2230769230769231,
+      0.3920039215686274
+     ],
+     "lower_one_sided_97.5": 0.2230769230769231,
+     "upper_one_sided_97.5": 0.3920039215686274,
+     "boot_sd": 0.042900198878483675,
+     "n_boot": 10000,
+     "retained_pairs": 125
+    }
+   }
+  }
+ },
+ "P1_D1_PMP_gt_0.5": {
+  "lower_97.5": 0.107981220657277,
+  "holds": false
+ },
+ "P2_D1_minus_D2_gt_0": {
+  "estimate": -0.5422885572139303,
+  "ci95_two_sided": [
+   -0.6111111111111112,
+   -0.4642857142857143
+  ],
+  "lower_one_sided_97.5": -0.6111111111111112,
+  "upper_one_sided_97.5": -0.4642857142857143,
+  "boot_sd": 0.037105651580546545,
+  "n_boot": 10000,
+  "holds": false
+ },
+ "ceiling_lofo_rf": {
+  "estimate": 0.9950248756218906,
+  "ci95_two_sided": [
+   0.9844559585492227,
+   1.0
+  ],
+  "lower_one_sided_97.5": 0.9844559585492227,
+  "upper_one_sided_97.5": 1.0,
+  "boot_sd": 0.004746467812431132,
+  "n_boot": 10000
+ },
+ "wins_per_family_D1": {
+  "5100000": [
+   1.5,
+   11
+  ],
+  "5100001": [
+   1.5,
+   10
+  ],
+  "5100002": [
+   0.5,
+   7
+  ],
+  "5100003": [
+   1.5,
+   10
+  ],
+  "5100004": [
+   2.5,
+   8
+  ],
+  "5100005": [
+   1.0,
+   13
+  ],
+  "5100006": [
+   1.0,
+   5
+  ],
+  "5100007": [
+   0.5,
+   6
+  ],
+  "5100008": [
+   1.5,
+   8
+  ],
+  "5100009": [
+   1.0,
+   11
+  ],
+  "5100010": [
+   0.5,
+   11
+  ],
+  "5100011": [
+   2.5,
+   12
+  ],
+  "5100012": [
+   0.5,
+   14
+  ],
+  "5100013": [
+   1.5,
+   6
+  ],
+  "5100014": [
+   3.0,
+   9
+  ],
+  "5100015": [
+   1.5,
+   14
+  ],
+  "5100016": [
+   1.0,
+   13
+  ],
+  "5100017": [
+   0.5,
+   5
+  ],
+  "5100018": [
+   2.5,
+   14
+  ],
+  "5100019": [
+   2.0,
+   14
+  ]
+ },
+ "decision": null
+}

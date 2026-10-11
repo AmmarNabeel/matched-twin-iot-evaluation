@@ -1,0 +1,5 @@
+detector,PMP,PMP_ci_low,PMP_ci_high,AUC_pooled,AUC_pooled_ci_low,AUC_pooled_ci_high,Delta_match,Delta_match_ci_low,Delta_match_ci_high,PMP_all_pairs,PMP_all_pairs_ci_low,PMP_all_pairs_ci_high,PMP_7feature_novelty,PMP_7feature_novelty_ci_low,PMP_7feature_novelty_ci_high
+D1 RF + isotonic (frozen),0.9333,0.9182,0.9483,0.9574,0.9492,0.965,0.0241,0.0126,0.036,0.9561,0.9466,0.9652,0.9281,0.9101,0.9454
+D2 novelty only,0.6372,0.6013,0.6727,0.7519,0.7342,0.769,0.1147,0.0769,0.1529,0.7615,0.7432,0.7811,0.5603,0.5192,0.6025
+D3 Isolation Forest,0.5659,0.5288,0.6023,0.6932,0.6776,0.7085,0.1273,0.0912,0.1636,0.702,0.6811,0.7236,0.37,0.3326,0.4061
+D4 logistic regression,0.9194,0.8978,0.9396,0.9303,0.9208,0.9397,0.0109,-0.0058,0.0287,0.9324,0.9189,0.9446,0.8943,0.8637,0.9228

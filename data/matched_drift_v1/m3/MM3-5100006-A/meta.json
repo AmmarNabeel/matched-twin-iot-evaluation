@@ -1,0 +1,15 @@
+{
+ "run_id": "MM3-5100006-A",
+ "split": "TEST-HELD-OUT",
+ "master_seed": 5100006,
+ "composition": {
+  "B1": 20,
+  "M3": 20
+ },
+ "variant": "v1",
+ "feature_config_hash": "2d682d02add336dfdf3e991e89903dd4030b0594d98798d0278870a3c5ac9bbc",
+ "pcap_sha256": "3aca0e6f779fdd41974e53c4c2cc52c91195ed044946e5bfa2703c14f4b2e45d",
+ "ground_truth_sha256": "214c98e5185aad1b4fa3367a080e6cc5cd24324057f93ea2089f69e0fe584e2d",
+ "plan_sha256": "6afb230541b88519251065cd0bba694809e431d3afb6f5fbf1d2b840276fa52e",
+ "n_events": 6913
+}

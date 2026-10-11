@@ -1,0 +1,9 @@
+detector,stratum,retained_pairs,PMP,PMP_ci_low,PMP_ci_high
+D1 RF + isotonic (frozen),signature_present,556,0.9919,0.9857,0.9973
+D1 RF + isotonic (frozen),signature_absent,89,0.5674,0.5,0.6353
+D2 novelty only,signature_present,556,0.6421,0.6089,0.6767
+D2 novelty only,signature_absent,89,0.6067,0.4881,0.7195
+D3 Isolation Forest,signature_present,556,0.5791,0.541,0.6179
+D3 Isolation Forest,signature_absent,89,0.4831,0.3861,0.5843
+D4 logistic regression,signature_present,556,0.9964,0.9907,1.0
+D4 logistic regression,signature_absent,89,0.4382,0.3299,0.5429

@@ -1,0 +1,37 @@
+{
+ "config_sha256": "4c56a4398c08db822fc0cf490165fe599690c64527211992a59842f1c5e30018",
+ "caliper_primary": 0.5141590785674552,
+ "caliper_secondary": 0.5242230734000211,
+ "sd_ln_n_benign_primary": 0.5141590785674552,
+ "sd_ln_n_benign_secondary": 0.5242230734000211,
+ "dry_run_retention_primary": 0.4083333333333333,
+ "F_m12": 37,
+ "F_m3": 20,
+ "sample_size": {
+  "family_pmp_dry": [
+   0.96875,
+   1.0,
+   1.0
+  ],
+  "sd_obs": 0.018042195912175808,
+  "sd_upper_limit": 0.03819418295026693,
+  "independent_pairs_floor": 0.12371791482634838,
+  "sd_used": 0.12371791482634838,
+  "mean_retained_pairs_per_family": 16.333333333333332,
+  "F_power": 17,
+  "F_precision_m12": 37,
+  "F_precision_m3": 17,
+  "F_m12": 37,
+  "F_m3": 20,
+  "rule": "F_m12 = max(F_power, F_precision_m12, min_families); F_m3 = max(F_precision_m3, min_families); SD_used = max(upper confidence limit of the SD across the dry-run families, sqrt(0.25 / mean retained pairs per family))"
+ },
+ "dry_run_seeds": [
+  3200000,
+  3200001,
+  3200002
+ ],
+ "dry_run_commit": [
+  "55420136fa9172240d63532f55e61da691a8bc21"
+ ],
+ "created_utc": "2026-10-08T09:44:45.120894+00:00"
+}

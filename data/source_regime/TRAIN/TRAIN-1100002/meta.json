@@ -1,0 +1,17 @@
+{
+ "run_id": "TRAIN-1100002",
+ "split": "TRAIN",
+ "master_seed": 1100002,
+ "composition": {
+  "S0": 24,
+  "B1": 8,
+  "M1": 4,
+  "M2": 4
+ },
+ "variant": "v2",
+ "feature_config_hash": "2d682d02add336dfdf3e991e89903dd4030b0594d98798d0278870a3c5ac9bbc",
+ "pcap_sha256": "59e3b8b7e836c3d11754165e0a5a7dce7437ec5b16c3fb9432bc6c9b0e47fee5",
+ "ground_truth_sha256": "daa27ec2eca3ee23faf21ac693513ef656041dc710ef21ba9557adb7280a500b",
+ "plan_sha256": "4efefb8047e50ec25450f8da382d4c44209a3fcbd24016a9e7e589880d20bb7d",
+ "n_events": 7040
+}

@@ -1,0 +1,17 @@
+{
+ "run_id": "CAL-2100003",
+ "split": "CAL",
+ "master_seed": 2100003,
+ "composition": {
+  "S0": 24,
+  "B1": 8,
+  "M1": 4,
+  "M2": 4
+ },
+ "variant": "v2",
+ "feature_config_hash": "2d682d02add336dfdf3e991e89903dd4030b0594d98798d0278870a3c5ac9bbc",
+ "pcap_sha256": "47a278e9a94b77dee8435e9f5f1dfa407e6481db9531fc249291b26ba93f3cbe",
+ "ground_truth_sha256": "8594800bbd6e7153f334b6588fa02e999fbbdf978c9e19b15856b1ed3995d6b6",
+ "plan_sha256": "68df5bc529a449029b952b662b5284b765feeeb9a8d8941216c15cbf15540244",
+ "n_events": 7446
+}

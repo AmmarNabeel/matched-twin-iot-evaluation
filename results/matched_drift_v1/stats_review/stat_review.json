@@ -1,0 +1,636 @@
+{
+ "m12": {
+  "note": "M1/M2 families: confirmatory estimands C1, C2",
+  "G": 37,
+  "retained_pairs": 645,
+  "retained_per_family": {
+   "min": 11,
+   "median": 17.0,
+   "max": 25
+  },
+  "detectors": {
+   "D1_rf_isotonic": {
+    "PMP_pooled_ratio": 0.9333333333333333,
+    "boot_ci_review": [
+     0.9182239385023653,
+     0.9484126984126984
+    ],
+    "robust_t_ci": {
+     "estimate": 0.43333333333333335,
+     "se": 0.007802429116263999,
+     "ci95": [
+      0.41750927364956314,
+      0.44915739301710356
+     ],
+     "t_vs_null": 55.53825954407701,
+     "df": 36,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.9140825248779899,
+     0.9525841417886768
+    ],
+    "family_mean_unweighted": 0.9341842750578785,
+    "family_mean_t_ci": [
+     0.9190222154331986,
+     0.9493463346825584
+    ],
+    "family_median": 0.9375,
+    "family_min": 0.8421052631578947,
+    "family_max": 1.0,
+    "families_above_0.5": 37,
+    "families_below_0.5": 0,
+    "sign_test_vs_0.5": {
+     "positive": 37,
+     "negative": 0,
+     "zero": 0,
+     "p_one_sided": 7.275957614183426e-12,
+     "p_two_sided": 1.4551915228366852e-11
+    },
+    "tie_share_retained_pairs": 0.07441860465116279,
+    "robust_t_ci_pmp": [
+     0.9175092736495631,
+     0.9491573930171036
+    ]
+   },
+   "D2_novelty_only": {
+    "PMP_pooled_ratio": 0.6372093023255814,
+    "boot_ci_review": [
+     0.6024464831804281,
+     0.6727279645772796
+    ],
+    "robust_t_ci": {
+     "estimate": 0.1372093023255814,
+     "se": 0.018193368955730534,
+     "ci95": [
+      0.10031143988884034,
+      0.17410716476232246
+     ],
+     "t_vs_null": 7.541720428989779,
+     "df": 36,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.6001031998997747,
+     0.6743154047513881
+    ],
+    "family_mean_unweighted": 0.6358329062124998,
+    "family_mean_t_ci": [
+     0.5979517584086983,
+     0.6737140540163012
+    ],
+    "family_median": 0.631578947368421,
+    "family_min": 0.4666666666666667,
+    "family_max": 0.8823529411764706,
+    "families_above_0.5": 29,
+    "families_below_0.5": 4,
+    "sign_test_vs_0.5": {
+     "positive": 29,
+     "negative": 4,
+     "zero": 4,
+     "p_one_sided": 5.464302375912666e-06,
+     "p_two_sided": 1.0928604751825333e-05
+    },
+    "tie_share_retained_pairs": 0.0,
+    "robust_t_ci_pmp": [
+     0.6003114398888403,
+     0.6741071647623225
+    ]
+   },
+   "D3_isolation_forest": {
+    "PMP_pooled_ratio": 0.5658914728682171,
+    "boot_ci_review": [
+     0.5287535345745658,
+     0.602606218795784
+    ],
+    "robust_t_ci": {
+     "estimate": 0.06589147286821706,
+     "se": 0.019044156530391484,
+     "ci95": [
+      0.027268133255197426,
+      0.1045148124812367
+     ],
+     "t_vs_null": 3.4599312793435937,
+     "df": 36,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.5276405473931368,
+     0.6041423983432973
+    ],
+    "family_mean_unweighted": 0.5593441781697267,
+    "family_mean_t_ci": [
+     0.522469595770031,
+     0.5962187605694224
+    ],
+    "family_median": 0.5333333333333333,
+    "family_min": 0.3333333333333333,
+    "family_max": 0.7857142857142857,
+    "families_above_0.5": 21,
+    "families_below_0.5": 9,
+    "sign_test_vs_0.5": {
+     "positive": 21,
+     "negative": 9,
+     "zero": 7,
+     "p_one_sided": 0.021386972628533847,
+     "p_two_sided": 0.042773945257067694
+    },
+    "tie_share_retained_pairs": 0.0,
+    "robust_t_ci_pmp": [
+     0.5272681332551974,
+     0.6045148124812367
+    ]
+   },
+   "D4_logistic_regression": {
+    "PMP_pooled_ratio": 0.9193798449612403,
+    "boot_ci_review": [
+     0.897709538684911,
+     0.9394421096400145
+    ],
+    "robust_t_ci": {
+     "estimate": 0.4193798449612403,
+     "se": 0.010768512273546233,
+     "ci95": [
+      0.39754028981977685,
+      0.4412194001027038
+     ],
+     "t_vs_null": 38.945012487145746,
+     "df": 36,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.8983689032516916,
+     0.9403907866707889
+    ],
+    "family_mean_unweighted": 0.9193743499992658,
+    "family_mean_t_ci": [
+     0.8991319363603898,
+     0.9396167636381418
+    ],
+    "family_median": 0.9375,
+    "family_min": 0.7222222222222222,
+    "family_max": 1.0,
+    "families_above_0.5": 37,
+    "families_below_0.5": 0,
+    "sign_test_vs_0.5": {
+     "positive": 37,
+     "negative": 0,
+     "zero": 0,
+     "p_one_sided": 7.275957614183426e-12,
+     "p_two_sided": 1.4551915228366852e-11
+    },
+    "tie_share_retained_pairs": 0.0,
+    "robust_t_ci_pmp": [
+     0.8975402898197768,
+     0.9412194001027038
+    ]
+   }
+  },
+  "design_effect_D1": {
+   "se_cluster_bootstrap": 0.007701214262840076,
+   "se_if_pairs_independent": 0.00982184104864463,
+   "design_effect": 0.6147982321682234,
+   "effective_pairs": 1049.1246822966023
+  },
+  "contrasts_D1_minus": {
+   "D2_novelty_only": {
+    "pooled_difference": 0.2961240310077519,
+    "boot_ci_review": [
+     0.25747972780874917,
+     0.3335950386493742
+    ],
+    "robust_t_ci": {
+     "estimate": 0.2961240310077519,
+     "se": 0.019877894800740155,
+     "ci95": [
+      0.2558097918102503,
+      0.3364382702052535
+     ],
+     "t_vs_null": 14.897152539348669,
+     "df": 36
+    },
+    "family_sign_test": {
+     "positive": 37,
+     "negative": 0,
+     "zero": 0,
+     "p_one_sided": 7.275957614183426e-12,
+     "p_two_sided": 1.4551915228366852e-11
+    },
+    "wilcoxon_signed_rank_greater_p": 5.68930002371152e-08,
+    "signflip": {
+     "p_one_sided_exact": 7.275957614183426e-12,
+     "note": "all clusters positive: observed sum is the maximum of the 2^G sign patterns"
+    },
+    "families_D1_greater": 37,
+    "wilcoxon_p_holm_3_contrasts": 1.6941279909127862e-07
+   },
+   "D3_isolation_forest": {
+    "pooled_difference": 0.3674418604651163,
+    "boot_ci_review": [
+     0.3330893118594436,
+     0.4029733959311424
+    ],
+    "robust_t_ci": {
+     "estimate": 0.3674418604651163,
+     "se": 0.01781748776076416,
+     "ci95": [
+      0.3313063204249679,
+      0.4035774005052647
+     ],
+     "t_vs_null": 20.622540360277895,
+     "df": 36
+    },
+    "family_sign_test": {
+     "positive": 37,
+     "negative": 0,
+     "zero": 0,
+     "p_one_sided": 7.275957614183426e-12,
+     "p_two_sided": 1.4551915228366852e-11
+    },
+    "wilcoxon_signed_rank_greater_p": 5.64709330304262e-08,
+    "signflip": {
+     "p_one_sided_exact": 7.275957614183426e-12,
+     "note": "all clusters positive: observed sum is the maximum of the 2^G sign patterns"
+    },
+    "families_D1_greater": 37,
+    "wilcoxon_p_holm_3_contrasts": 1.6941279909127862e-07
+   },
+   "D4_logistic_regression": {
+    "pooled_difference": 0.013953488372093023,
+    "boot_ci_review": [
+     0.0,
+     0.0294583403045005
+    ],
+    "robust_t_ci": {
+     "estimate": 0.013953488372093023,
+     "se": 0.007597143783542822,
+     "ci95": [
+      -0.0014542333598960948,
+      0.02936121010408214
+     ],
+     "t_vs_null": 1.8366755677731832,
+     "df": 36
+    },
+    "family_sign_test": {
+     "positive": 15,
+     "negative": 10,
+     "zero": 12,
+     "p_one_sided": 0.21217811107635498,
+     "p_two_sided": 0.42435622215270996
+    },
+    "wilcoxon_signed_rank_greater_p": 0.020358152686745856,
+    "signflip": {
+     "p_one_sided_mc": 0.046138976930511534,
+     "flips": 2000000
+    },
+    "families_D1_greater": 15,
+    "wilcoxon_p_holm_3_contrasts": 0.020358152686745856
+   }
+  },
+  "C1_signflip_D1": {
+   "p_one_sided_exact": 7.275957614183426e-12,
+   "note": "all clusters positive: observed sum is the maximum of the 2^G sign patterns"
+  },
+  "friedman_reference_only": {
+   "statistic": 96.01704545454554,
+   "p": 1.1161747507475382e-20,
+   "blocks": 37,
+   "treatments": 4
+  }
+ },
+ "structural_within_M2": {
+  "retained_pairs_by_type_and_signature": {
+   "M1_present": 434,
+   "M1_absent": 0,
+   "M2_present": 122,
+   "M2_absent": 89
+  },
+  "M2_present": {
+   "pairs": 122,
+   "families_with_pairs": 36,
+   "PMP_D1": 0.9631147540983607,
+   "boot_ci_review": [
+    0.9356060606060606,
+    0.9870689655172413
+   ],
+   "PMP_D2": 0.6639344262295082
+  },
+  "M2_absent": {
+   "pairs": 89,
+   "families_with_pairs": 34,
+   "PMP_D1": 0.5674157303370787,
+   "boot_ci_review": [
+    0.5,
+    0.6352941176470588
+   ],
+   "PMP_D2": 0.6067415730337079
+  },
+  "within_M2_difference_present_minus_absent": {
+   "estimate": 0.39569902376128196,
+   "boot_ci_review": [
+    0.3267335279968258,
+    0.46722102871542703
+   ],
+   "caveat": "stratum is defined by the realized features of the malicious twin, which the score itself uses; the comparison is a description, not a causal contrast"
+  }
+ },
+ "m3": {
+  "note": "M3 families: descriptive (retention below the pre-specified minimum)",
+  "G": 20,
+  "retained_pairs": 201,
+  "retained_per_family": {
+   "min": 5,
+   "median": 10.5,
+   "max": 14
+  },
+  "detectors": {
+   "D1_rf_isotonic": {
+    "PMP_pooled_ratio": 0.13930348258706468,
+    "boot_ci_review": [
+     0.10804020100502512,
+     0.1751412429378531
+    ],
+    "robust_t_ci": {
+     "estimate": -0.36069651741293535,
+     "se": 0.01769194631247237,
+     "ci95": [
+      -0.3977261866142404,
+      -0.3236668482116303
+     ],
+     "t_vs_null": -20.387610896074985,
+     "df": 19,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.09143341369882885,
+     0.18717355147530051
+    ],
+    "family_mean_unweighted": 0.1468643856143856,
+    "family_mean_t_ci": [
+     0.10795841651863594,
+     0.18577035471013528
+    ],
+    "family_median": 0.1396103896103896,
+    "family_min": 0.03571428571428571,
+    "family_max": 0.3333333333333333,
+    "families_above_0.5": 0,
+    "families_below_0.5": 20,
+    "sign_test_vs_0.5": {
+     "positive": 0,
+     "negative": 20,
+     "zero": 0,
+     "p_one_sided": 1.0,
+     "p_two_sided": 1.9073486328125e-06
+    },
+    "tie_share_retained_pairs": 0.23880597014925373,
+    "robust_t_ci_pmp": [
+     0.10227381338575958,
+     0.17633315178836972
+    ]
+   },
+   "D2_novelty_only": {
+    "PMP_pooled_ratio": 0.681592039800995,
+    "boot_ci_review": [
+     0.6229508196721312,
+     0.7403846153846154
+    ],
+    "robust_t_ci": {
+     "estimate": 0.18159203980099503,
+     "se": 0.030978125613961648,
+     "ci95": [
+      0.11675407773049115,
+      0.2464300018714989
+     ],
+     "t_vs_null": 5.861944071888992,
+     "df": 19,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.6171881266338127,
+     0.7459959529681773
+    ],
+    "family_mean_unweighted": 0.6706333943833945,
+    "family_mean_t_ci": [
+     0.605584049316882,
+     0.735682739449907
+    ],
+    "family_median": 0.6547619047619048,
+    "family_min": 0.3333333333333333,
+    "family_max": 0.9285714285714286,
+    "families_above_0.5": 18,
+    "families_below_0.5": 2,
+    "sign_test_vs_0.5": {
+     "positive": 18,
+     "negative": 2,
+     "zero": 0,
+     "p_one_sided": 0.00020122528076171875,
+     "p_two_sided": 0.0004024505615234375
+    },
+    "tie_share_retained_pairs": 0.0,
+    "robust_t_ci_pmp": [
+     0.6167540777304912,
+     0.7464300018714989
+    ]
+   },
+   "D3_isolation_forest": {
+    "PMP_pooled_ratio": 0.21890547263681592,
+    "boot_ci_review": [
+     0.16483516483516483,
+     0.27461139896373055
+    ],
+    "robust_t_ci": {
+     "estimate": -0.2810945273631841,
+     "se": 0.02831422673539595,
+     "ci95": [
+      -0.3403568850023386,
+      -0.22183216972402953
+     ],
+     "t_vs_null": -9.927678053513095,
+     "df": 19,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.16173942726374763,
+     0.2760715180098842
+    ],
+    "family_mean_unweighted": 0.22896020646020646,
+    "family_mean_t_ci": [
+     0.15738313181854977,
+     0.3005372811018632
+    ],
+    "family_median": 0.2403846153846154,
+    "family_min": 0.0,
+    "family_max": 0.6,
+    "families_above_0.5": 1,
+    "families_below_0.5": 18,
+    "sign_test_vs_0.5": {
+     "positive": 1,
+     "negative": 18,
+     "zero": 1,
+     "p_one_sided": 0.9999980926513672,
+     "p_two_sided": 7.62939453125e-05
+    },
+    "tie_share_retained_pairs": 0.0,
+    "robust_t_ci_pmp": [
+     0.15964311499766137,
+     0.2781678302759705
+    ]
+   },
+   "D4_logistic_regression": {
+    "PMP_pooled_ratio": 0.44776119402985076,
+    "boot_ci_review": [
+     0.36315715965892387,
+     0.5384615384615384
+    ],
+    "robust_t_ci": {
+     "estimate": -0.05223880597014925,
+     "se": 0.04553177188555157,
+     "ci95": [
+      -0.14753789976644063,
+      0.04306028782614213
+     ],
+     "t_vs_null": -1.147304482273531,
+     "df": 19,
+     "note": "interval is for PMP-0.5; add 0.5"
+    },
+    "naive_wald_ci_pairs_independent": [
+     0.37901562211526485,
+     0.5165067659444367
+    ],
+    "family_mean_unweighted": 0.4411996336996338,
+    "family_mean_t_ci": [
+     0.32811320816570383,
+     0.5542860592335637
+    ],
+    "family_median": 0.3660714285714286,
+    "family_min": 0.0,
+    "family_max": 1.0,
+    "families_above_0.5": 7,
+    "families_below_0.5": 13,
+    "sign_test_vs_0.5": {
+     "positive": 7,
+     "negative": 13,
+     "zero": 0,
+     "p_one_sided": 0.9423408508300781,
+     "p_two_sided": 0.26317596435546875
+    },
+    "tie_share_retained_pairs": 0.0,
+    "robust_t_ci_pmp": [
+     0.3524621002335594,
+     0.5430602878261421
+    ]
+   }
+  },
+  "design_effect_D1": {
+   "se_cluster_bootstrap": 0.01711761273796632,
+   "se_if_pairs_independent": 0.024423504534814202,
+   "design_effect": 0.4912136555098486,
+   "effective_pairs": 409.1905787744739
+  },
+  "contrasts_D1_minus": {
+   "D2_novelty_only": {
+    "pooled_difference": -0.5422885572139303,
+    "boot_ci_review": [
+     -0.6095905431386686,
+     -0.4639175257731959
+    ],
+    "robust_t_ci": {
+     "estimate": -0.5422885572139303,
+     "se": 0.03793759348300577,
+     "ci95": [
+      -0.6216928529402252,
+      -0.46288426148763534
+     ],
+     "t_vs_null": -14.294226581790161,
+     "df": 19
+    },
+    "family_sign_test": {
+     "positive": 0,
+     "negative": 20,
+     "zero": 0,
+     "p_one_sided": 1.0,
+     "p_two_sided": 1.9073486328125e-06
+    },
+    "wilcoxon_signed_rank_greater_p": 0.999955900648979,
+    "signflip": {
+     "p_one_sided_mc": 1.0,
+     "flips": 2000000
+    },
+    "families_D1_greater": 0,
+    "wilcoxon_p_holm_3_contrasts": 1.0
+   },
+   "D3_isolation_forest": {
+    "pooled_difference": -0.07960199004975124,
+    "boot_ci_review": [
+     -0.14285714285714285,
+     -0.011961722488038277
+    ],
+    "robust_t_ci": {
+     "estimate": -0.07960199004975124,
+     "se": 0.03411970885450712,
+     "ci95": [
+      -0.15101536141164282,
+      -0.008188618687859667
+     ],
+     "t_vs_null": -2.333020788342279,
+     "df": 19
+    },
+    "family_sign_test": {
+     "positive": 6,
+     "negative": 12,
+     "zero": 2,
+     "p_one_sided": 0.951873779296875,
+     "p_two_sided": 0.237884521484375
+    },
+    "wilcoxon_signed_rank_greater_p": 0.973743874965959,
+    "signflip": {
+     "p_one_sided_mc": 0.9852640073679964,
+     "flips": 2000000
+    },
+    "families_D1_greater": 6,
+    "wilcoxon_p_holm_3_contrasts": 1.0
+   },
+   "D4_logistic_regression": {
+    "pooled_difference": -0.30845771144278605,
+    "boot_ci_review": [
+     -0.4128211009174312,
+     -0.2109336703431376
+    ],
+    "robust_t_ci": {
+     "estimate": -0.30845771144278605,
+     "se": 0.05222145041080116,
+     "ci95": [
+      -0.41775846330868355,
+      -0.19915695957688856
+     ],
+     "t_vs_null": -5.906724325278154,
+     "df": 19
+    },
+    "family_sign_test": {
+     "positive": 1,
+     "negative": 17,
+     "zero": 2,
+     "p_one_sided": 0.9999961853027344,
+     "p_two_sided": 0.00014495849609375
+    },
+    "wilcoxon_signed_rank_greater_p": 0.9995682620684416,
+    "signflip": {
+     "p_one_sided_mc": 0.9999910000045,
+     "flips": 2000000
+    },
+    "families_D1_greater": 1,
+    "wilcoxon_p_holm_3_contrasts": 1.0
+   }
+  },
+  "C1_signflip_D1": {
+   "p_one_sided_mc": 1.0,
+   "flips": 2000000
+  },
+  "friedman_reference_only": {
+   "statistic": 44.57368421052629,
+   "p": 1.1398863091855125e-09,
+   "blocks": 20,
+   "treatments": 4
+  }
+ }
+}

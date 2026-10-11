@@ -1,0 +1,16 @@
+{
+ "run_id": "MFIN-4100009-A",
+ "split": "TEST-SEEN",
+ "master_seed": 4100009,
+ "composition": {
+  "B1": 20,
+  "M1": 10,
+  "M2": 10
+ },
+ "variant": "v1",
+ "feature_config_hash": "2d682d02add336dfdf3e991e89903dd4030b0594d98798d0278870a3c5ac9bbc",
+ "pcap_sha256": "c2d7ff84a8a97af5e4882773cdc8cd39c505559ace4fe0ce5ccc2679a54398b9",
+ "ground_truth_sha256": "c6c19e77cfb48ca0e094c5626d53019942bbd53601d1ca9666927382afd1b9ac",
+ "plan_sha256": "a3c1259d50650b2dcdba2e17fac32fb80db15d50e40946829d4afa044eb1ceef",
+ "n_events": 7681
+}

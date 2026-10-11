@@ -1,0 +1,190 @@
+{
+  "config_version": "matched-drift-v1",
+  "stage": "Matched-drift experiment: do post-drift scores separate malicious from benign drift, or mainly respond to novelty relative to the source regime",
+  "analysis_seed": 7000000,
+  "pilot_v2_config": "configs/pilot_stage3a_v2.json",
+  "pilot_v2_config_sha256": "afa9952e88108b369b1b521f89afd6d287974c27e1e7249ed3f8fac2c8494061",
+  "source_data": {
+    "root": "results/raw/pilot_stage3a_v2",
+    "train_split": "TRAIN",
+    "cal_split": "CAL",
+    "note": "Pilot-v2 TRAIN-v2 and CAL-v2 (development seeds, unchanged) are the source regime for all detectors and the novelty reference. They are NOT final evidence."
+  },
+  "twin_design": {
+    "sessions_per_run": 40,
+    "runs_per_family": 2,
+    "arms": [
+      "A",
+      "B"
+    ],
+    "compositions": {
+      "M12": {
+        "B1": 20,
+        "M1": 10,
+        "M2": 10
+      },
+      "M3": {
+        "B1": 20,
+        "M3": 20
+      }
+    },
+    "shared_before_drift": [
+      "family seed",
+      "client_id",
+      "container layout",
+      "background link condition of every container",
+      "base device profile (period, payload size)",
+      "onset tau",
+      "trigger time t_a = tau + 30 s",
+      "first publish time",
+      "initial subscription",
+      "every publish before tau",
+      "uniform draws behind the publish microstructure (interval, size, topic) of the continuing connection"
+    ],
+    "differ_only_by": "the benign-versus-malicious post-drift intervention: benign branch = frozen B1 generator, malicious branch = frozen M1/M2 (or M3) generator, with independent post-drift parameter streams; M1 attackers connect from an attacker container with the same background link condition as the identity's device container; label",
+    "roles": "each identity is malicious in exactly one run of the family and benign (B1) in the other; in every container of 4 identities two are malicious in run A and two in run B, so both labels occur in every run and every container",
+    "malicious_types": "M12 families: 10 M1 + 10 M2 per run (seeded); M3 families: 20 M3 per run",
+    "b2": "not branched (container-level intervention); excluded from the matched experiment",
+    "invariant_test": "tests/test_twin.py and twin_checks.pair_invariants (also run in the data-quality gate)"
+  },
+  "seed_blocks": {
+    "dry_run": {
+      "label": "MDEV",
+      "split": "VAL",
+      "base": 3200000,
+      "n_families": 3,
+      "kind": "M12",
+      "use": "mechanics, matching feasibility and the pre-specified sample-size calculation only; never in the final analysis"
+    },
+    "final_m12": {
+      "label": "MFIN",
+      "split": "TEST-SEEN",
+      "base": 4100000,
+      "n_families": null,
+      "kind": "M12",
+      "n_families_source": "lock file (sample_size rule)"
+    },
+    "final_m3": {
+      "label": "MM3",
+      "split": "TEST-HELD-OUT",
+      "base": 5100000,
+      "n_families": null,
+      "kind": "M3",
+      "n_families_source": "lock file (sample_size rule)",
+      "generate_after": "the matched experiment is fully locked"
+    }
+  },
+  "novelty": {
+    "reference_scenarios": [
+      "S0",
+      "B1"
+    ],
+    "reference": "benign sessions of Pilot-v2 TRAIN-v2 (10 runs x 32 = 320 sessions)",
+    "k": 10,
+    "distance": "Euclidean",
+    "N": "mean distance to the k nearest reference sessions",
+    "used_value": "ln N (N floored at 1e-6)",
+    "standardization": "per feature: mean and sample SD (ddof=1) of the reference set; SD floored (count features sub_novel_count and reconnects_60s: 1.0, others 1e-6)",
+    "primary_features": [
+      "iat_cv",
+      "max_gap_ratio",
+      "log_rate_ratio",
+      "log_payload_ratio"
+    ],
+    "primary_rationale": "generic magnitude of rate, timing and size change relative to source behaviour. The three structural features (topic_novelty, sub_novel_count, reconnects_60s) are where the generators put the malicious signature; including them in the novelty measure would define the effect away (retention is expected to collapse).",
+    "secondary_features": "all 7 features (descriptive: matching on overall distance)",
+    "caliper": "c = 1.0 x SD(ln N of the BENIGN twin sessions of the dry-run families); the same rule separately for the secondary novelty",
+    "matching": "a twin pair is retained if |ln N(malicious twin) - ln N(benign twin)| <= c",
+    "unmatched_pairs": "excluded from PMP; always counted; included in AUC_pooled; reported by malicious type; PMP over all pairs is reported as a secondary number",
+    "min_retention": 0.3,
+    "min_retention_rule": "if the fraction of retained pairs in the final M12 families is below 0.30, the primary result is declared INCONCLUSIVE (retention); the caliper is not changed. The same threshold in the dry run is a go/no-go gate for generating the final data.",
+    "caliper_sd_multiple": 1.0,
+    "sd_floor": {
+      "sub_novel_count": 1.0,
+      "reconnects_60s": 1.0
+    },
+    "sd_floor_default": 1e-06
+  },
+  "primary_analysis": {
+    "detector": "D1 = the frozen calibrated Random Forest of configs/pilot_stage3a_v2.json (RF fitted on TRAIN-v2, isotonic calibration on CAL-v2, unchanged settings and random state)",
+    "metric": "PMP = P(s_malicious > s_benign) over retained twin pairs",
+    "ties": "a tie counts 1/2 (isotonic calibration produces plateaus)",
+    "estimator": "ratio estimator: sum of pair wins / number of retained pairs, pooled over families",
+    "inference": "family-clustered percentile bootstrap, 10000 resamples of families with replacement, seeded from analysis_seed; one-sided 97.5% bound = 2.5th percentile; sessions and pairs inside a family are never treated as independent",
+    "n_boot": 10000,
+    "alpha_one_sided": 0.025,
+    "contrast_conventional": "AUC_pooled = Mann-Whitney AUC of D1 over all benign and malicious sessions of the same families (no matching, ties 1/2); Delta_match = AUC_pooled - PMP, a DESCRIPTIVE matched-performance gap with the same bootstrap resamples. No causal interpretation is attached to it.",
+    "P1": "lower 97.5% bound of PMP(D1) > 0.5",
+    "P2": "lower 97.5% bound of PMP(D1) - PMP(D2) > 0, where D2 is the novelty-only score ln N",
+    "primary_conjunction": "P1 and P2 (intersection-union, each at 0.025)",
+    "ceiling": "RF trained and tested on the twin data with leave-one-family-out cross-validation; PMP on the retained pairs. Diagnostic of identifiability.",
+    "decision_rule": {
+      "SUPPORTED": "P1 and P2 hold, retention >= min_retention, and the lower 97.5% bound of the ceiling PMP >= 0.60",
+      "NOT_SUPPORTED": "retention >= min_retention and the upper 97.5% bound of PMP(D1) < 0.55",
+      "INCONCLUSIVE": "everything else (including low retention or a ceiling below 0.60)"
+    }
+  },
+  "secondary": {
+    "detectors": {
+      "D2": "novelty-only: score = ln N (primary novelty)",
+      "D3": "Isolation Forest fitted on benign TRAIN-v2 sessions (200 trees, contamination auto)",
+      "D4": "L2 logistic regression, standardized features, C = 1, fitted on TRAIN-v2"
+    },
+    "analyses": [
+      "PMP for D2-D4 with family-clustered intervals",
+      "PMP over all pairs",
+      "secondary (7-feature) novelty matching with its retention",
+      "PMP by malicious type (M1, M2)",
+      "PMP by structural-signature presence of the malicious twin (any of topic_novelty, sub_novel_count, reconnects_60s non-zero)",
+      "Delta_match for each detector",
+      "held-out M3 families: PMP for all detectors, one-sided test PMP(D1) > 0.5 (secondary, not in the conjunction)"
+    ]
+  },
+  "detectors": {
+    "isolation_forest": {
+      "n_estimators": 200
+    },
+    "logistic_regression": {
+      "C": 1.0,
+      "max_iter": 1000
+    }
+  },
+  "sample_size": {
+    "rule": "computed from the 3 dry-run families before final generation; recorded in the lock file",
+    "target_effect": 0.1,
+    "target_effect_meaning": "detect PMP(D1) = 0.60 against the null 0.50",
+    "power": 0.9,
+    "alpha_one_sided": 0.025,
+    "halfwidth_m12": 0.04,
+    "halfwidth_m3": 0.06,
+    "halfwidth_meaning": "half-width of the 95% two-sided interval of PMP",
+    "sd_upper_confidence": 0.8,
+    "min_families": 20,
+    "unit": "independent family (the sessions of a family share one environment and are not independent)"
+  },
+  "dry_run_gates": {
+    "all_runs_all_ok": true,
+    "pair_invariants_hold": true,
+    "retention_at_least": 0.3,
+    "on_failure": "stop and report; no redesign"
+  },
+  "exclusion": "dry-run families (seed block 3,200,000+) never enter the final analysis; the analysis loader rejects them; Pilot-v1/v2 observations are not final evidence",
+  "data_quality_gate": [
+    "exact run and family counts and seeds",
+    "composition and 20/20 labels in every run, 2/2 per container",
+    "pair invariants for every family",
+    "no seed overlap with any other block",
+    "features finite",
+    "no future-event leakage",
+    "no unattributed streams",
+    "one-message-per-segment audit clean",
+    "M1 takeover mechanics",
+    "provenance (clean tree, same commit, recomputed hashes)"
+  ],
+  "execution": {
+    "parallel_runs": 2,
+    "margin_s": 90,
+    "retry_failed_run_once_same_seed": true,
+    "preserve_failed_attempts": true
+  }
+}

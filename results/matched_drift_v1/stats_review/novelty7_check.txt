@@ -1,0 +1,4 @@
+m12 novelty 4 magnitude features (D2) PMP on primary-retained pairs 0.637 pooled AUC 0.752
+m12 novelty all 7 features PMP on primary-retained pairs 0.823 pooled AUC 0.847
+m3 novelty 4 magnitude features (D2) PMP on primary-retained pairs 0.682 pooled AUC 0.839
+m3 novelty all 7 features PMP on primary-retained pairs 0.592 pooled AUC 0.813

@@ -1,0 +1,4 @@
+test,value,holds
+P1 PMP(D1) > 0.5 (lower 97.5%),0.108,False
+P2 PMP(D1) - PMP(D2) > 0 (lower 97.5%),-0.6111,False
+ceiling PMP (lower 97.5%),0.9845,

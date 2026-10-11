@@ -1,0 +1,189 @@
+{
+  "config_version": "pilot-stage3a-v2",
+  "stage": "3A Pilot v2: validation-only development pilot with a redesigned source regime (blueprint section 20). No TEST, no M3, no power analysis, no H3.",
+  "note_git": "The git commit is not stored here (a file cannot contain the hash of the commit that contains it). The runner writes pilot_manifest.json with the commit hash, git_dirty and the sha256 of this file; it refuses to start if git_dirty is true.",
+  "splits": {
+    "TRAIN": {
+      "seed_base": 1100000,
+      "n_runs": 10,
+      "sessions_per_run": 40,
+      "quota": {
+        "S0": 24,
+        "B1": 8,
+        "M1": 4,
+        "M2": 4
+      },
+      "links": "clean"
+    },
+    "CAL": {
+      "seed_base": 2100000,
+      "n_runs": 6,
+      "sessions_per_run": 40,
+      "quota": {
+        "S0": 24,
+        "B1": 8,
+        "M1": 4,
+        "M2": 4
+      },
+      "links": "clean"
+    },
+    "VAL": {
+      "seed_base": 3100000,
+      "n_runs": 12,
+      "sessions_per_run": 40,
+      "quota": {
+        "B1": 16,
+        "B2": 16,
+        "M1": 4,
+        "M2": 4
+      },
+      "links": "background variability p=0.3 per non-B2 container"
+    }
+  },
+  "forbidden": [
+    "TEST-SEEN",
+    "TEST-HELD-OUT",
+    "M3"
+  ],
+  "execution": {
+    "parallel_runs": 2,
+    "retry_failed_run_once_same_seed": true,
+    "preserve_failed_attempts": true,
+    "note_parallel": "Pilot v1: 4 parallel runs reached load 8.6 on 6 CPUs and caused timing failures; 1 run reached load 1.9. Two runs in parallel (expected load about 4) is used. Timing checks stay as frozen."
+  },
+  "features": {
+    "version": "v1.3/stage2C-7features",
+    "names": [
+      "iat_cv",
+      "max_gap_ratio",
+      "log_rate_ratio",
+      "log_payload_ratio",
+      "topic_novelty",
+      "sub_novel_count",
+      "reconnects_60s"
+    ]
+  },
+  "analysis_seed": 7000000,
+  "rf": {
+    "family": "RandomForestClassifier (scikit-learn)",
+    "n_estimators": 200,
+    "min_samples_leaf": 5,
+    "max_features": "sqrt",
+    "max_depth": null,
+    "class_weight": null,
+    "bootstrap": true,
+    "n_jobs": 1,
+    "selection": "none: fixed a priori, not tuned on any data",
+    "random_state": "derived_seed(analysis_seed, 'rf/full') % 2**31; replica b: derived_seed(analysis_seed, 'rf/boot/b')"
+  },
+  "isotonic": {
+    "fit_on": "CAL (RF scores of CAL sessions vs Y)",
+    "increasing": true,
+    "y_min": 0.0,
+    "y_max": 1.0,
+    "out_of_bounds": "clip"
+  },
+  "bootstrap": {
+    "scheme": "run-cluster",
+    "M": 100,
+    "kappa": 0.1,
+    "resample_train_runs": "with replacement, n = number of TRAIN runs, all sessions kept",
+    "resample_cal_runs": "separately, with replacement, n = number of CAL runs",
+    "refit": [
+      "RF",
+      "isotonic"
+    ],
+    "target": "unchanged VAL sessions",
+    "quantile_method": "numpy linear interpolation",
+    "width": "w = Q_(1-kappa) - Q_kappa of the M calibrated probabilities (a bootstrap spread, not a confidence interval)",
+    "run_index_draw": "int(draw(analysis_seed, 'boot/{b}/{train|cal}', j) * n_runs)"
+  },
+  "cost": {
+    "c_miss": 1.0,
+    "k": 0.1,
+    "beta": 0.02,
+    "phi": 0.02,
+    "v": 0.25,
+    "use": "descriptive only (H2 mechanistic indication, band degeneracy); no tuning"
+  },
+  "diagnostics": {
+    "strata": {
+      "kind": "rank quartiles of s on VAL",
+      "n": 4,
+      "ties": "broken by (run_id, session_id), never by Y"
+    },
+    "conditional_width": {
+      "statistic": "stratum-centred (within-stratum) Pearson correlation of w with e = Y - s, also with Y, also Spearman variant",
+      "interval": "run-cluster bootstrap over VAL runs",
+      "n_boot": 2000,
+      "per_run": "same statistic computed in each VAL run"
+    },
+    "incremental_information": {
+      "cv": "leave-one-VAL-run-out",
+      "model_A": "logistic regression on [logit(s)]",
+      "model_B": "logistic regression on [logit(s), w]",
+      "logit_clip_eps": 0.01,
+      "standardize": "z-score fitted on the training folds",
+      "penalty": "L2",
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 1000,
+      "metrics": [
+        "Brier",
+        "log loss"
+      ],
+      "n_boot": 10000,
+      "paired_by": "held-out run",
+      "interval": "run-cluster bootstrap of the 12 per-run differences, n_boot 10000",
+      "diff_definition": "delta = metric(A) - metric(B); positive means w helps"
+    },
+    "determinism_of_w": {
+      "statistic": "leave-one-VAL-run-out R^2 of w regressed on rank(s) with k-nearest-neighbours, k = 25",
+      "near_deterministic_if_R2_at_least": 0.9
+    },
+    "permutation_reference": {
+      "scheme": "blueprint section 11, rank blocks m = 5 within run",
+      "B": 20,
+      "use": "reference distribution of delta Brier when w carries no within-block information; descriptive"
+    },
+    "band_degeneracy": {
+      "score_only_band": "Bayes thresholds tau_CV, tau_VT of the primary costs applied to s (untuned)",
+      "non_degenerate_if": "V share of VAL sessions >= 0.05 and C and T regions each non-empty"
+    },
+    "h2_mechanistic": {
+      "statistic": "share of VAL sessions whose [Q_kappa, Q_(1-kappa)] bootstrap range straddles tau_CV or tau_VT; share whose action differs between the two quantiles",
+      "claim": "none; descriptive"
+    }
+  },
+  "h1_verdict_rule": {
+    "SUPPORTED": "all of: (i) mean per-run delta Brier > 0 with run-bootstrap one-sided 97.5% lower bound > 0; (ii) mean per-run delta log loss > 0; (iii) delta Brier > 0 in at least 8 of 12 held-out runs; (iv) conditional correlation of w with (Y - s) > 0 with run-bootstrap one-sided 97.5% lower bound > 0; (v) leave-one-run-out R^2 of w on s < 0.9",
+    "NOT_SUPPORTED": "all of: mean delta Brier <= 0; mean delta log loss <= 0; one-sided 97.5% lower bound of the conditional correlation <= 0",
+    "WEAK": "every other outcome",
+    "exactly_one": true
+  },
+  "variant": "v2",
+  "supersedes_note": "Development Pilot v1 (configs/pilot_stage3a.json, results/raw/pilot_stage3a, results/pilot_stage3a) is preserved unchanged; its verdict H1-NOT-SUPPORTED-IN-PILOT stands. Pilot v2 uses fresh seeds and a different TRAIN/CAL composition only.",
+  "output_root": "results/raw/pilot_stage3a_v2",
+  "results_dir": "results/pilot_stage3a_v2",
+  "source_regime": {
+    "known_benign_change": "B1 (frozen generator, unchanged) in TRAIN and CAL, clean links",
+    "unseen_benign_shift": "B2 appears only in VAL (and later TEST)",
+    "held_out": "M3 only in TEST-HELD-OUT",
+    "rationale": "Pilot v1 showed that a source model trained on stable-benign versus malicious learns a stable-versus-changed shortcut. B1 is made a known benign family so that behavioural change alone does not mean malicious. This is a source-regime correction, not a change to improve w."
+  },
+  "adequacy_gate": {
+    "rule": "brier_s_less_than_brier_constant_development_prevalence",
+    "description": "Before any bootstrap width or H1 diagnostic is computed, require Brier(s on VAL) < Brier(constant predictor p0 on VAL), where p0 = mean Y over TRAIN and CAL sessions (development prevalence, not VAL prevalence).",
+    "reported": [
+      "AUC",
+      "Brier",
+      "log loss (probabilities clipped to [1e-6, 1-1e-6])",
+      "fraction of s <= 0.01",
+      "fraction of s >= 0.99",
+      "scenario-wise score distributions (quantiles 0,5,25,50,75,95,100 and mean)"
+    ],
+    "on_failure": "stop: write the score diagnostics and the gate result; compute no width, no H1; no RF/calibration/uncertainty change is allowed",
+    "no_tuning": "RF and calibration are not tuned from VAL results"
+  },
+  "interpretation_rule": "This is the only source-regime redesign allowed before TEST. If Pilot v2 again gives H1-NOT-SUPPORTED-IN-PILOT, this uncertainty direction stops. If H1 is supported, the next stage may be the power analysis and TEST LOCK (not executed here)."
+}

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper (see preferred-citation) and this repository."
+title: "Matched-twin evaluation of post-authentication trust scores: code and derived data"
+type: software
+authors:
+  - family-names: "[FAMILY NAME]"
+    given-names: "[GIVEN NAME]"
+    orcid: "https://orcid.org/[ORCID]"
+repository-code: "[REPOSITORY URL]"
+doi: "[ZENODO DOI]"
+license: MIT
+version: "1.0.0"
+date-released: "[RELEASE DATE]"
+preferred-citation:
+  type: article
+  title: "Matched-Twin Evaluation of Post-Authentication Trust Scores Under Behavioural Drift: An Emulated MQTT Testbed Study for IoT Service Monitoring"
+  journal: "IEEE Transactions on Network and Service Management"
+  authors:
+    - family-names: "[FAMILY NAME]"
+      given-names: "[GIVEN NAME]"
+  year: "[YEAR]"
+  notes: "Submitted; citation details to be completed after publication."

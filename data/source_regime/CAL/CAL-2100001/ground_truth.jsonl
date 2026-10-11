@@ -1,0 +1,40 @@
+{"container": "c00", "params": {"diag_share": 0.1, "diag_topic": false, "payload_mult": 0.9334168263251593, "period_mult": 0.6064566027412343}, "scenario": "B1", "session_id": "dev-016", "t_a": 180.90307387610326, "tau": 150.90307387610326, "y": 0}
+{"container": "c00", "params": {"new_topic": false, "new_topic_share": 0.2616544189786441, "payload_mult": 0.5199798034506744, "rate_mult": 1.1832559678803658}, "scenario": "M2", "session_id": "dev-009", "t_a": 184.28750252760713, "tau": 154.28750252760713, "y": 1}
+{"container": "c00", "params": {"diag_share": 0.1, "diag_topic": true, "payload_mult": 0.9717152753027918, "period_mult": 0.7808516470714315}, "scenario": "B1", "session_id": "dev-010", "t_a": 180.83165461564136, "tau": 150.83165461564136, "y": 0}
+{"container": "c00", "params": {}, "scenario": "S0", "session_id": "dev-023", "t_a": 184.4253159838723, "tau": 154.4253159838723, "y": 0}
+{"container": "c01", "params": {"diag_share": 0.1, "diag_topic": true, "payload_mult": 1.002023919772018, "period_mult": 1.6721903890313485}, "scenario": "B1", "session_id": "dev-029", "t_a": 189.8782253318759, "tau": 159.8782253318759, "y": 0}
+{"container": "c01", "params": {}, "scenario": "S0", "session_id": "dev-018", "t_a": 181.63462471168216, "tau": 151.63462471168216, "y": 0}
+{"container": "c01", "params": {}, "scenario": "S0", "session_id": "dev-017", "t_a": 181.2370610772963, "tau": 151.2370610772963, "y": 0}
+{"container": "c01", "params": {"new_topic": true, "new_topic_share": 0.33977179705275123, "payload_mult": 0.5826922875060685, "rate_mult": 1.29203878893911}, "scenario": "M2", "session_id": "dev-032", "t_a": 184.65109724810983, "tau": 154.65109724810983, "y": 1}
+{"container": "c02", "params": {"n_novel_subs": 3, "new_topic": true, "new_topic_share": 0.1, "payload_mult": 0.8040116588657978, "rate_mult": 0.9354687094049405}, "scenario": "M1", "session_id": "dev-038", "t_a": 188.73267930922293, "tau": 158.73267930922293, "y": 1}
+{"container": "c02", "params": {"n_novel_subs": 3, "new_topic": false, "new_topic_share": 0.1, "payload_mult": 0.7327442679419315, "rate_mult": 0.8349997040837064}, "scenario": "M1", "session_id": "dev-025", "t_a": 189.1347466043894, "tau": 159.1347466043894, "y": 1}
+{"container": "c02", "params": {}, "scenario": "S0", "session_id": "dev-000", "t_a": 184.70747114085435, "tau": 154.70747114085435, "y": 0}
+{"container": "c02", "params": {}, "scenario": "S0", "session_id": "dev-003", "t_a": 189.18527429716346, "tau": 159.18527429716346, "y": 0}
+{"container": "c03", "params": {}, "scenario": "S0", "session_id": "dev-006", "t_a": 180.8040351630648, "tau": 150.8040351630648, "y": 0}
+{"container": "c03", "params": {}, "scenario": "S0", "session_id": "dev-026", "t_a": 187.59341773043616, "tau": 157.59341773043616, "y": 0}
+{"container": "c03", "params": {}, "scenario": "S0", "session_id": "dev-005", "t_a": 189.68182342295748, "tau": 159.68182342295748, "y": 0}
+{"container": "c03", "params": {}, "scenario": "S0", "session_id": "dev-012", "t_a": 181.83248800662793, "tau": 151.83248800662793, "y": 0}
+{"container": "c04", "params": {}, "scenario": "S0", "session_id": "dev-011", "t_a": 183.99516646446781, "tau": 153.99516646446781, "y": 0}
+{"container": "c04", "params": {}, "scenario": "S0", "session_id": "dev-008", "t_a": 187.00033006215585, "tau": 157.00033006215585, "y": 0}
+{"container": "c04", "params": {"n_novel_subs": 3, "new_topic": false, "new_topic_share": 0.1, "payload_mult": 0.761825474877541, "rate_mult": 0.7893946426151897}, "scenario": "M1", "session_id": "dev-015", "t_a": 180.8220302247, "tau": 150.8220302247, "y": 1}
+{"container": "c04", "params": {"new_topic": false, "new_topic_share": 0.47550571118084106, "payload_mult": 1.1866189748540725, "rate_mult": 1.2611436825549818}, "scenario": "M2", "session_id": "dev-028", "t_a": 187.91004953534951, "tau": 157.91004953534951, "y": 1}
+{"container": "c05", "params": {}, "scenario": "S0", "session_id": "dev-013", "t_a": 188.70030918120264, "tau": 158.70030918120264, "y": 0}
+{"container": "c05", "params": {"new_topic": true, "new_topic_share": 0.49592150935844176, "payload_mult": 1.677629718461601, "rate_mult": 2.70880728479268}, "scenario": "M2", "session_id": "dev-014", "t_a": 181.1835441954968, "tau": 151.1835441954968, "y": 1}
+{"container": "c05", "params": {}, "scenario": "S0", "session_id": "dev-022", "t_a": 181.8219889604444, "tau": 151.8219889604444, "y": 0}
+{"container": "c05", "params": {}, "scenario": "S0", "session_id": "dev-033", "t_a": 181.86111244463723, "tau": 151.86111244463723, "y": 0}
+{"container": "c06", "params": {}, "scenario": "S0", "session_id": "dev-027", "t_a": 183.2663675536436, "tau": 153.2663675536436, "y": 0}
+{"container": "c06", "params": {}, "scenario": "S0", "session_id": "dev-002", "t_a": 185.28468060855914, "tau": 155.28468060855914, "y": 0}
+{"container": "c06", "params": {"diag_share": 0.1, "diag_topic": true, "payload_mult": 1.3241665693777105, "period_mult": 1.5373858006141568}, "scenario": "B1", "session_id": "dev-037", "t_a": 182.1004599626532, "tau": 152.1004599626532, "y": 0}
+{"container": "c06", "params": {}, "scenario": "S0", "session_id": "dev-030", "t_a": 180.11896299852876, "tau": 150.11896299852876, "y": 0}
+{"container": "c07", "params": {}, "scenario": "S0", "session_id": "dev-036", "t_a": 180.90064292254064, "tau": 150.90064292254064, "y": 0}
+{"container": "c07", "params": {}, "scenario": "S0", "session_id": "dev-004", "t_a": 180.46501978535812, "tau": 150.46501978535812, "y": 0}
+{"container": "c07", "params": {"diag_share": 0.1, "diag_topic": false, "payload_mult": 1.410487450340331, "period_mult": 0.5460789516570482}, "scenario": "B1", "session_id": "dev-001", "t_a": 188.63798276031238, "tau": 158.63798276031238, "y": 0}
+{"container": "c07", "params": {"diag_share": 0.1, "diag_topic": true, "payload_mult": 1.3958008631271859, "period_mult": 0.8364628324414521}, "scenario": "B1", "session_id": "dev-007", "t_a": 187.5126494297868, "tau": 157.5126494297868, "y": 0}
+{"container": "c08", "params": {}, "scenario": "S0", "session_id": "dev-039", "t_a": 185.2467486412003, "tau": 155.2467486412003, "y": 0}
+{"container": "c08", "params": {}, "scenario": "S0", "session_id": "dev-019", "t_a": 182.61480839785037, "tau": 152.61480839785037, "y": 0}
+{"container": "c08", "params": {"n_novel_subs": 0, "new_topic": false, "new_topic_share": 0.1, "payload_mult": 0.5349608435527142, "rate_mult": 0.9165752564162101}, "scenario": "M1", "session_id": "dev-031", "t_a": 180.071385028295, "tau": 150.071385028295, "y": 1}
+{"container": "c08", "params": {"diag_share": 0.1, "diag_topic": true, "payload_mult": 0.8975385479139867, "period_mult": 0.62079464422656}, "scenario": "B1", "session_id": "dev-021", "t_a": 180.36523028071394, "tau": 150.36523028071394, "y": 0}
+{"container": "c09", "params": {}, "scenario": "S0", "session_id": "dev-034", "t_a": 188.64164587414638, "tau": 158.64164587414638, "y": 0}
+{"container": "c09", "params": {"diag_share": 0.1, "diag_topic": false, "payload_mult": 0.7163027008423082, "period_mult": 0.5297178836733618}, "scenario": "B1", "session_id": "dev-020", "t_a": 189.90478559462974, "tau": 159.90478559462974, "y": 0}
+{"container": "c09", "params": {}, "scenario": "S0", "session_id": "dev-024", "t_a": 186.57416915682091, "tau": 156.57416915682091, "y": 0}
+{"container": "c09", "params": {}, "scenario": "S0", "session_id": "dev-035", "t_a": 187.35757250529662, "tau": 157.35757250529662, "y": 0}

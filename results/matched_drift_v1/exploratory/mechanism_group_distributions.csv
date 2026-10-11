@@ -1,0 +1,73 @@
+group,variable,n,mean,median,iqr_low,iqr_high
+benign twin (M1/M2 families),iat_cv,1480,0.0324,0.0294,0.0273,0.0317
+benign twin (M1/M2 families),max_gap_ratio,1480,1.1651,1.1703,0.7407,1.5519
+benign twin (M1/M2 families),log_rate_ratio,1480,-0.0054,-0.0897,-0.3779,0.3605
+benign twin (M1/M2 families),log_payload_ratio,1480,0.0303,0.0407,-0.1608,0.2155
+benign twin (M1/M2 families),topic_novelty,1480,0.032,0.0,0.0,0.0455
+benign twin (M1/M2 families),sub_novel_count,1480,0.0,0.0,0.0,0.0
+benign twin (M1/M2 families),reconnects_60s,1480,0.0,0.0,0.0,0.0
+benign twin (M1/M2 families),D1_score,1480,0.0635,0.0286,0.0286,0.0286
+malicious M1 twin,iat_cv,740,0.0326,0.0294,0.0272,0.0318
+malicious M1 twin,max_gap_ratio,740,1.1416,1.0326,0.7556,1.4809
+malicious M1 twin,log_rate_ratio,740,-0.0171,0.0,-0.3464,0.3192
+malicious M1 twin,log_payload_ratio,740,-0.0125,-0.0096,-0.3622,0.3292
+malicious M1 twin,topic_novelty,740,0.02,0.0,0.0,0.0
+malicious M1 twin,sub_novel_count,740,1.4027,1.0,0.0,2.0
+malicious M1 twin,reconnects_60s,740,1.0,1.0,1.0,1.0
+malicious M1 twin,D1_score,740,0.9901,1.0,1.0,1.0
+malicious M2 twin,iat_cv,740,0.0352,0.0294,0.0273,0.0322
+malicious M2 twin,max_gap_ratio,740,1.3976,1.0274,0.5473,1.9907
+malicious M2 twin,log_rate_ratio,740,0.0357,0.0647,-0.6105,0.6895
+malicious M2 twin,log_payload_ratio,740,0.1908,0.1722,-0.2457,0.6448
+malicious M2 twin,topic_novelty,740,0.2171,0.2308,0.0,0.375
+malicious M2 twin,sub_novel_count,740,0.0,0.0,0.0,0.0
+malicious M2 twin,reconnects_60s,740,0.0,0.0,0.0,0.0
+malicious M2 twin,D1_score,740,0.6936,1.0,0.3333,1.0
+benign twin (M3 families),iat_cv,800,0.0326,0.0294,0.0272,0.0316
+benign twin (M3 families),max_gap_ratio,800,1.1928,1.1826,0.7537,1.5725
+benign twin (M3 families),log_rate_ratio,800,-0.0266,-0.1094,-0.399,0.3458
+benign twin (M3 families),log_payload_ratio,800,0.0224,0.0184,-0.1659,0.2206
+benign twin (M3 families),topic_novelty,800,0.028,0.0,0.0,0.0404
+benign twin (M3 families),sub_novel_count,800,0.0,0.0,0.0,0.0
+benign twin (M3 families),reconnects_60s,800,0.0,0.0,0.0,0.0
+benign twin (M3 families),D1_score,800,0.0558,0.0286,0.0286,0.0286
+malicious M3 twin,iat_cv,800,0.0496,0.0483,0.0423,0.054
+malicious M3 twin,max_gap_ratio,800,1.102,1.0985,0.9754,1.2182
+malicious M3 twin,log_rate_ratio,800,-0.0058,-0.0117,-0.1136,0.1024
+malicious M3 twin,log_payload_ratio,800,0.0396,0.04,-0.0334,0.1089
+malicious M3 twin,topic_novelty,800,0.0243,0.0,0.0,0.0455
+malicious M3 twin,sub_novel_count,800,0.0,0.0,0.0,0.0
+malicious M3 twin,reconnects_60s,800,0.0,0.0,0.0,0.0
+malicious M3 twin,D1_score,800,0.0109,0.0,0.0,0.0286
+source CAL S0,iat_cv,144,0.0286,0.0287,0.0266,0.0305
+source CAL S0,max_gap_ratio,144,1.0467,1.0472,1.0437,1.0503
+source CAL S0,log_rate_ratio,144,-0.0001,0.0,-0.0129,0.0152
+source CAL S0,log_payload_ratio,144,-0.0007,-0.0001,-0.0095,0.0072
+source CAL S0,topic_novelty,144,0.0,0.0,0.0,0.0
+source CAL S0,sub_novel_count,144,0.0,0.0,0.0,0.0
+source CAL S0,reconnects_60s,144,0.0,0.0,0.0,0.0
+source CAL S0,D1_score,144,0.0,0.0,0.0,0.0
+source CAL B1,iat_cv,48,0.029,0.0291,0.0265,0.0311
+source CAL B1,max_gap_ratio,48,1.1044,0.9143,0.7158,1.5491
+source CAL B1,log_rate_ratio,48,0.0274,0.148,-0.3731,0.3671
+source CAL B1,log_payload_ratio,48,0.106,0.1169,-0.062,0.3152
+source CAL B1,topic_novelty,48,0.053,0.0,0.0,0.092
+source CAL B1,sub_novel_count,48,0.0,0.0,0.0,0.0
+source CAL B1,reconnects_60s,48,0.0,0.0,0.0,0.0
+source CAL B1,D1_score,48,0.0937,0.0286,0.0286,0.0571
+source CAL M1,iat_cv,24,0.0272,0.0263,0.0249,0.0298
+source CAL M1,max_gap_ratio,24,1.2418,1.1955,0.9995,1.4802
+source CAL M1,log_rate_ratio,24,-0.1512,-0.152,-0.3736,0.0429
+source CAL M1,log_payload_ratio,24,0.0587,0.0834,-0.2807,0.435
+source CAL M1,topic_novelty,24,0.0238,0.0,0.0,0.0
+source CAL M1,sub_novel_count,24,1.5833,1.0,0.75,3.0
+source CAL M1,reconnects_60s,24,1.0,1.0,1.0,1.0
+source CAL M1,D1_score,24,1.0,1.0,1.0,1.0
+source CAL M2,iat_cv,24,0.0308,0.0293,0.0276,0.0301
+source CAL M2,max_gap_ratio,24,1.1351,0.8206,0.4574,1.342
+source CAL M2,log_rate_ratio,24,0.2487,0.2401,-0.1845,0.9363
+source CAL M2,log_payload_ratio,24,0.3242,0.3843,0.1116,0.6859
+source CAL M2,topic_novelty,24,0.195,0.129,0.0,0.3704
+source CAL M2,sub_novel_count,24,0.0,0.0,0.0,0.0
+source CAL M2,reconnects_60s,24,0.0,0.0,0.0,0.0
+source CAL M2,D1_score,24,0.8127,1.0,0.5,1.0

@@ -1,0 +1,6 @@
+Criterion,Value,Holds
+P1: lower 97.5% bound of D1 PMP > 0.5,0.9182,True
+P2: lower 97.5% bound of PMP(D1) - PMP(D2) > 0,0.2569,True
+Retention at least the minimum,0.4358,True
+Ceiling check,0.9357,True
+Decision,SUPPORTED,
